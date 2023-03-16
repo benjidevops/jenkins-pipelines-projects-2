@@ -1,0 +1,19 @@
+node{
+def mavenHome = tool name: 'Maven3.9.0'
+
+agent{
+    label 'Test_1'
+}
+stage('CLONEFROMGITHUB') {
+    git 'https://github.com/benjidevops/jenkins-pipelines-projects-2'
+    }
+
+
+
+
+
+
+
+
+
+}

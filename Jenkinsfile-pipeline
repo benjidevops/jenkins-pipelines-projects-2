@@ -15,14 +15,14 @@ stage('mavenbuild&Package'){
 stage('sonarqube-codeqality-analysis'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
 }
-stage('Nexus-uploadbuild-artificat-to-nexus'){
-  sh "${mavenHome}/bin/mvn deploy"
-}
+//stage('Nexus-uploadbuild-artificat-to-nexus'){
+  //sh "${mavenHome}/bin/mvn deploy"}
+  
+stage('deploytotomcat-dev'){
+deploy adapters: [tomcat9(credentialsId: 'benjitomcatdeployment', path: '', url: 'http://52.15.60.3:8009/')], contextPath: 'Benji', war: 'target/*.war'
+} 
 
    
-
-
-
     
 
 }

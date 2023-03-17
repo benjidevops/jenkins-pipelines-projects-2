@@ -1,5 +1,5 @@
 node{
-def  mavenHome = tool name: 'maven3.9.0'
+def  mavenHome = tool name: 'Maven3.9.0'
 
    agent{
     label  'QA5'

@@ -15,6 +15,9 @@ stage('mavenbuild&Package'){
 stage('sonarqube-codeqality-analysis'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
 }
+stage('Nexus-uploadbuild-artificat-to-nexus'){
+  sh "${mavenHome}/bin/mvn deploy"
+}
 
    
 

@@ -1,29 +1,25 @@
 node{
-def mavenHome = tool name: 'Maven3.9.0'
+def  mavenHome = tool name: 'maven3.9.0'
 
-agent{
-    label 'Test_1'
-}
-stage('CLONEFROMGITHUB') {
+   agent{
+    label  'QA5'
+   }
+stage('CLONEFROMGITHUB'){
     git 'https://github.com/benjidevops/jenkins-pipelines-projects-2'
-    }
+}
 
 stage('mavenbuild&Package'){
     sh "${mavenHome}/bin/mvn clean package"
 }
+
 stage('sonarqube-codeqality-analysis'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
 }
-stage('Nexus-uploadbuild-artificat-to-nexus'){
-  sh "${mavenHome}/bin/mvn deploy"
-}
+
+   
 
 
 
-
-
-
-
-
+    
 
 }

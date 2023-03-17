@@ -93,16 +93,16 @@
 		
 	</dependencies>
 	<distributionManagement>
-	    <repository>
+	 <repository>
 	      <id>nexus</id>
 	      <name>LION TECH ACADEMY Releases Nexus Repository</name>
-	      <url>http://3.98.138.118:8081/repository/march11-release/</url>
+	      <url>http://52.15.60.3:8081/repository/benji-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>LION TECH ACADEMY Snapshot Nexus Repository </name>
-	      <url>http://3.98.138.118:8081/repository/march11-snapshot/</url>
+	      <url>http://52.15.60.3:8081/repository/benji-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>

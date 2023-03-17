@@ -8,6 +8,16 @@ stage('CLONEFROMGITHUB') {
     git 'https://github.com/benjidevops/jenkins-pipelines-projects-2'
     }
 
+stage('mavenbuild&Package'){
+    sh "${mavenHome}/bin/mvn clean package"
+}
+stage('sonarqube-codeqality-analysis'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+stage('Nexus-uploadbuild-artificat-to-nexus'){
+  sh "${mavenHome}/bin/mvn deploy"
+}
+
 
 
 
